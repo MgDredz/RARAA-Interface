@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rock Art Data Store</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+   </head>
+   <body>
+      <header id="mainHeader" class="shadow-sm p-3 position-fixed w-100" style="z-index: 1000;">
+         <h4 class="m-0">Rock Art Data Store</h4>
+      </header>
+      <div class="d-flex main-layout">
+         <aside class="sidebar overflow-auto">
+            <button id="botaoPesquisar" class="btn w-100 ">
+            Pesquisar
+            </button>
+            <div class="text-center mt-1 mb-2">
+               <small id="limparFiltros" class="text-muted" style="cursor: pointer;">Limpar filtros</small>
+            </div>
+            <!-- Filtro de Sítio -->
+            <hr class="hr1">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Sítio</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#sitioFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="sitioFilter">
+                  <div id="siteCheckboxes" class="scrollable-checkboxes"></div>
+               </div>
+            </div>
+            <!-- Filtro de Afloramento -->
+            <hr class="hr2">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Afloramento</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#afloramentoFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="afloramentoFilter">
+                  <div id="afloramentoCheckboxes" class="scrollable-checkboxes"></div>
+               </div>
+            </div>
+            <!-- Filtro de Cena -->
+            <hr class="hr2">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Cena</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#cenaFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="cenaFilter">
+                  <div id="cenaCheckboxes" class="scrollable-checkboxes"></div>
+                  <div id="cenaMensagem" class="text-muted small mt-2 msg-limitada">
+                     Não existem cenas para os afloramentos selecionados.
+                  </div>
+               </div>
+
+            </div>
+            <!-- Filtro de Tipo -->
+            <hr class="hr2">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Tipo</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#tipoFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="tipoFilter">
+                  <div id="tipoCheckboxes" class="scrollable-checkboxes"></div>
+               </div>
+            </div>
+            <!-- Filtro de Subtipo -->
+            <hr class="hr2">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Subtipo</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#subtipoFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="subtipoFilter">
+                  <div id="subtipoCheckboxes" class="scrollable-checkboxes"></div>
+               </div>
+            </div>
+            <!-- Filtro de Partes Representadas -->
+            <hr class="hr2">
+            <div class="filter-section">
+               <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h6 class="mb-0">Partes Representadas</h6>
+                  <button class="btn btn-sm toggle-arrow" type="button" data-bs-toggle="collapse" data-bs-target="#parteFilter">
+                     <span class="arrow-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M1.5 5.5l6.5 6.5 6.5-6.5-.7-.7L8 10.3 2.2 4.8z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="collapse show" id="parteFilter">
+                  <div id="parteCheckboxes" class="scrollable-checkboxes"></div>
+               </div>
+            </div>
+         </aside>
+         <!-- Resultados -->
+         <main class="results-area flex-fill overflow-auto">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+               <h5 class="mb-0 motivos-listados">X motivos listados</h5>
+               <div>
+                  <label for="ordenar" class="form-label me-2">Ordenar por:</label>
+                  <select id="ordenar" class="form-select d-inline-block w-auto">
+                     <option>Número de Inventário</option>
+                     <option>Tipo</option>
+                     <option>Cena</option>
+                  </select>
+               </div>
+            </div>
+            <div id="cardsContainer">
+               <!-- cards são inseridos dinamicamente -->
+            </div>
+         </main>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="script.js?v=3"></script>
+   </body>
+</html>

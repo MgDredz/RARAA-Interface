@@ -1,0 +1,285 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+#mainHeader {
+  background-color: #800000;
+  transition: top 0.3s ease-in-out;
+  top: 0;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  color:white;
+  
+}
+  
+
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 15px;
+  min-width: 250px;
+  border-right: 1px solid #dee2e6;
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+.results-area {
+  height: calc(100vh - 60px);
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin-top: 60px;
+}
+
+.filter-section h6 {
+  margin: 0;
+  font-size: 1.1rem;
+  padding-top: 3px;
+}
+.card img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-title-big {
+  font-size: 1.1rem; 
+  font-weight: 600; 
+}
+
+.card-img-wrapper {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garante o corte se necessário */
+}  
+
+.card {
+  border-radius: 6px;
+  padding: 0 !important;
+}
+
+.card-body {
+  padding: 8px 10px !important; /* reduz o espaçamento interior (topo/lados/base) */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-title,
+.card-text {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.card-body p {
+  margin-bottom: 2px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section h6 {
+  cursor: pointer;
+}
+
+.text-truncate-multiline {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.motivos-listados {
+  margin-left: 10px;
+}
+
+.hr1 {
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.hr2 {
+  border-top: 1px solid #ccc;
+  margin: -0.5rem 0 0.5rem 0;
+}
+
+/* Setinha de colapso */
+.toggle-arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.4rem;  /* torna a seta um pouco maior e mais aberta */
+  line-height: 0.8;     
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+  display: flex;
+}
+
+.toggle-arrow .arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg); /* seta para cima (aberta) */
+}
+
+.toggle-arrow.collapsed .arrow-icon {
+  transform: rotate(180deg); /* seta para baixo (fechada) */
+}
+
+.scrollable-checkboxes {
+  max-height: 182px; 
+  overflow-y: auto;
+}
+
+.form-check {
+  padding-left: 30px; 
+}
+
+#botaoPesquisar {
+  background-color: #800000;
+  color: white;
+  border: none;
+}
+
+#botaoPesquisar:hover {
+  background-color: #5b0101; 
+}
+
+#limparFiltros {
+  color: #989898;
+  font-size: 0.8rem;
+  line-height: 0;
+}
+
+#limparFiltros:hover {
+  color: #000000 !important;
+}
+
+.msg-limitada {
+  max-width: 200px; /* ou qualquer valor que fique bem na tua sidebar */
+  word-wrap: break-word;
+  display: none;
+}
+
+
+/*<!-- Unico ao motivo.js --> */ 
+
+.motif-attributes-box {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.motif-attributes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.motif-attributes-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.motif-attributes-list li:last-child {
+  border-bottom: none;
+}
+
+.motif-attributes-list .label {
+  font-weight: 400;
+  color: #666;
+}
+
+.motif-attributes-list .value {
+  text-align: right;
+  font-weight: 500;
+}
+
+.motif-img-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #ddd;
+  max-height: 500px;
+}
+
+.motif-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #e8e8e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-btn i {
+  margin-right: 6px;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05); 
+}
+
+#mainContent {
+  margin-top: 60px; 
+  transition: padding-top 0.3s;
+}
+
+.badge-cena {
+  background-color: white;
+  color: #6c757d; 
+  border: 1px solid #ced4da;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

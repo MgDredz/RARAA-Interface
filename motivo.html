@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="UTF-8">
+      <title>Rock Art Data Store - Motif</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+      <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+   </head>
+   <body>
+      <!-- Header -->
+      <header id="mainHeader" class="shadow-sm p-3 position-fixed w-100" style="z-index: 1000;">
+         <h4 class="m-0">Rock Art Data Store</h4>
+      </header>
+      <div id="mainContent" class="container-fluid py-4 px-5">
+         <a href="index.html" class="back-btn">
+         <i class="bi bi-arrow-left"></i> Voltar
+         </a>
+         <div class="row">
+            <!-- Coluna Esquerda -->
+            <div class="col-md-8">
+               <h2 id="motifTitle"></h2>
+               <p id="motifDescription" class="mb-2 text-muted"></p>
+               <div class="motif-img-wrapper">
+                  <img id="motifImage" src="" class="img-fluid" alt="Imagem do motivo">
+                  <button class="zoom-btn" onclick="abrirZoom()" aria-label="Expandir imagem">
+                  <i class="bi bi-arrows-fullscreen" style="color: black;"></i>
+                  </button>
+               </div>
+            </div>
+            <!-- Coluna Direita -->
+            <div class="col-md-4">
+               <div class="motif-attributes-box">
+                  <ul id="motifAttributes" class="motif-attributes-list"></ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content" style="background-color: white;">
+               <!-- Botão X -->
+               <div class="modal-header border-0" style="background-color: white;">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+               </div>
+               <div class="modal-body p-0 text-center">
+                  <div id="zoomContainer" style="overflow:hidden;">
+                     <img id="zoomedImage" src="" class="img-fluid" alt="Zoom" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="motivo.js" defer></script>
+   </body>
+</html>
